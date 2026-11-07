@@ -340,7 +340,7 @@ const RANDOM_EVENTS = [
 ];
 
 const RANKS = [
-  { min: 210, grade: 'S', title: '傳說級東北旅人', note: '完美！這趟旅程可以寫進族譜。' },
+  { min: 300, grade: 'S', title: '傳說級東北旅人', note: '完美！這趟旅程可以寫進族譜。' },
   { min: 150, grade: 'A', title: '資深旅人', note: '充實又盡興的一週！' },
   { min: 90,  grade: 'B', title: '開心旅人', note: '玩得開心就好，留點遺憾下次再來。' },
   { min: -1,  grade: 'C', title: '走馬看花', note: '趕趕趕的一週……下次慢慢來吧。' },
