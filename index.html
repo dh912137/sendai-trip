@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>仙台七日行 · 集章之旅</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 抬頭狀態列 -->
+  <header id="hud">
+    <div class="hud-title">🗾 仙台七日行</div>
+    <div class="hud-stats">
+      <span class="chip" id="stat-day">Day 1</span>
+      <span class="chip" id="stat-st">🔋 8</span>
+      <span class="chip" id="stat-money">💴 ¥20,000</span>
+      <button class="chip btn" id="btn-book">📕 朱印帳</button>
+    </div>
+  </header>
+
+  <!-- 地圖 -->
+  <main id="map-scroll">
+    <div id="map">
+      <svg id="path-svg" preserveAspectRatio="none">
+        <polyline id="path-line" fill="none" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <div id="nodes"></div>
+      <div id="token"><img id="token-img" src="assets/pose_walk.png" alt=""></div>
+      <div id="day-labels"></div>
+    </div>
+  </main>
+
+  <!-- 底部控制列 -->
+  <footer id="controls">
+    <div id="msg">擲骰子開始旅程吧！</div>
+    <div class="ctrl-row">
+      <div id="dice">🎲</div>
+      <button class="btn primary" id="btn-roll">擲骰子</button>
+      <button class="btn" id="btn-rest" title="原地休息回體力">😴 休息 +5🔋</button>
+    </div>
+    <div class="ctrl-row" id="adjust-row" hidden>
+      <button class="btn" id="adj-minus">−1 步（−1🔋）</button>
+      <span id="roll-result"></span>
+      <button class="btn" id="adj-plus">＋1 步（−1🔋）</button>
+      <button class="btn primary" id="btn-go">就出發！</button>
+    </div>
+  </footer>
+
+  <!-- Day 橫幅 -->
+  <div id="day-banner" hidden>
+    <div class="banner-inner">
+      <div class="banner-day" id="banner-day"></div>
+      <div class="banner-title" id="banner-title"></div>
+    </div>
+  </div>
+
+  <!-- 事件卡 -->
+  <div id="modal" hidden>
+    <div class="card">
+      <div class="card-emoji" id="card-emoji"></div>
+      <div class="card-title" id="card-title"></div>
+      <div class="card-sub" id="card-sub"></div>
+      <div class="card-text" id="card-text"></div>
+      <div class="card-effects" id="card-effects"></div>
+      <div class="stamp-mark" id="stamp-mark">印</div>
+      <button class="btn primary" id="card-ok">繼續 ▶</button>
+    </div>
+  </div>
+
+  <!-- 朱印帳 -->
+  <div id="book" hidden>
+    <div class="book-inner">
+      <h2>📕 朱印帳</h2>
+      <div id="book-list"></div>
+      <button class="btn primary" id="book-close">關上</button>
+    </div>
+  </div>
+
+  <!-- 結算明信片 -->
+  <div id="ending" hidden>
+    <div class="postcard">
+      <div class="pc-head">✈️ 旅程結算明信片</div>
+      <div class="pc-rank" id="pc-rank">S</div>
+      <div class="pc-rank-title" id="pc-rank-title"></div>
+      <div class="pc-note" id="pc-note"></div>
+      <div class="pc-stats" id="pc-stats"></div>
+      <div class="pc-foods" id="pc-foods"></div>
+      <button class="btn primary" id="btn-again">再玩一次 🔁</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
